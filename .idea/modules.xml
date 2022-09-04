@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/concurrent-ruby-1.1.10/concurrent-ruby-1.1.10.iml" filepath="$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/concurrent-ruby-1.1.10/concurrent-ruby-1.1.10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/eventmachine-1.2.7.iml" filepath="$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/eventmachine-1.2.7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/http_parser.rb-0.8.0.iml" filepath="$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/http_parser.rb-0.8.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kalafinaglll.github.io.iml" filepath="$PROJECT_DIR$/.idea/kalafinaglll.github.io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/thread_safe-0.3.6/spec/spec.iml" filepath="$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/thread_safe-0.3.6/spec/spec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/thread_safe-0.3.6/thread_safe-0.3.6.iml" filepath="$PROJECT_DIR$/vendor/bundle/ruby/3.1.0/gems/thread_safe-0.3.6/thread_safe-0.3.6.iml" />
+    </modules>
+  </component>
+</project>
