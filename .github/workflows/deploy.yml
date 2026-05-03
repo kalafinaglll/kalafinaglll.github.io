@@ -13,11 +13,28 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Tells GitHub to use the 2026 standard
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install, build, and upload with Astro
-        uses: withastro/action@v3
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24 # Use the newest Node version
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro
+        run: npm run build
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
     needs: build
