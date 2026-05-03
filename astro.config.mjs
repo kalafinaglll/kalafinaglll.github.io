@@ -1,5 +1,7 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  site: 'https://kalafinaglll.github.io',
+  // If your repo is named exactly username.github.io, you don't need a base.
+  // If it's named anything else, add: base: '/your-repo-name',
+});
