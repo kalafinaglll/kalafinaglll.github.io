@@ -1,11 +1,239 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Placeholder for now. Eventually you will fetch real posts here.
+const recentPosts = [
+  { title: "My First Post in Astro", description: "Learning how Content Collections work.", url: "/blog/first-post" },
+  { title: "PhD Research Update - [Year]", description: "A summary of recent progress in [Topic].", url: "/blog/phd-update" },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Long Gu | PhD Student at TU Darmstadt">
+	<main>
+    <div class="academic-container">
+      <div class="profile-sidebar">
+        <!-- PORTRAIT SECTION -->
+        <!-- Replace 'portrait_placeholder.jpg' with your filename later, placed in the 'public/' folder -->
+        <img 
+          src="portrait.jpg" 
+          alt="Long Gu Portrait" 
+          class="portrait"
+        />
+        
+        <!-- SOCIAL LINKS SECTION -->
+        <div class="social-links-box">
+          <h2>Contact & Links</h2>
+          <ul class="social-links">
+            <li><strong>Email:</strong> <a href="mailto:[long.gu@tu-darmstadt.de]">[long.gu@tu-darmstadt.de]</a></li>
+            <li><a href="https://www.linkedin.com/in/long-gu-ba19b323a" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+            <li><a href="https://scholar.google.com/citations?user=04bCO20AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+            <li><a href="https://github.com/kalafinaglll" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
+            <!-- <li><a href="[CV_PDF_URL_OPTIONAL]" target="_blank">Download CV (PDF)</a></li> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <!-- INTRODUCTION SECTION -->
+        <div class="bio-section">
+          <h1>Long Gu</h1>
+          <p class="subtitle">
+            PhD Student in [Systems Group]
+          </p>
+          
+          <div class="institution-block">
+            I am a PhD student working at <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noopener noreferrer" class="uni-link">Technische Universität Darmstadt</a>.
+          </div>
+
+          <div class="advisor-block">
+            I am advised by 
+            <a href="https://zistvan.github.io/" target="_blank">[Prof. Zsolt István]</a> 
+            and 
+            <a href="https://www.informatik.tu-darmstadt.de/systems/systems_tuda/group/team_detail_18624.en.jsp" target="_blank">[Prof. Carsten Binnig]</a>.
+          </div>
+
+          <p class="intro-paragraph">
+            Welcome! My name is Long Gu, and I am currently pursuing my PhD at TU Darmstadt in Germany.
+			My core research interests lie at the intersection of Cryptography and Systems. 
+			Specifically, my current work explores how to make the oblivous query execution more efficient. 
+			Before joining TU Darmstadt, I did serveral internships in the area of cyber security.
+			Through this blog, I aim to document my academic journey, share insights from my research, and connect with others who share a curiosity for the realities of PhD life and academic research.
+          </p>
+        </div>
+
+        <!-- RESEARCH INTERESTS SECTION (Common in academic sites) -->
+        <div class="research-interests">
+          <h2>Research Interests</h2>
+          <p>[Secure Multi-party Computation] · [Oblivious Query Execution] · [Crypto] · [Blockchain]</p>
+        </div>
+
+        <!-- BLOG SUMMARY SECTION -->
+        <!-- <div class="blog-section">
+          <h2>Recent Blog Posts & Notes</h2>
+          <ul class="post-list">
+            {recentPosts.map((post) => (
+              <li class="post-item">
+                <a href={post.url} class="post-title">{post.title}</a>
+                <p class="post-description">{post.description}</p>
+              </li>
+            ))}
+          </ul> -->
+          <div class="view-all">
+            <a href="/blog" class="styled-button">View All Posts →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+	</main>
 </Layout>
+
+<style>
+  /* 
+    MODERN, BEAUTIFUL, ACADEMIC STYLING 
+    Written directly into the Astro file for easiest setup.
+  */
+  :root {
+    --primary-text: #2d3748;
+    --secondary-text: #4a5568;
+    --accent: #2b6cb0; /* Deep blue academic accent */
+    --accent-hover: #2c5282;
+    --background: #ffffff;
+    --sidebar-bg: #f7fafc;
+    --border: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 8px;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--primary-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  a { color: var(--accent); text-decoration: none; transition: color 0.2s;}
+  a:hover { color: var(--accent-hover); text-decoration: underline;}
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .academic-container {
+    display: flex;
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .academic-container { flex-direction: column; gap: 1.5rem;}
+  }
+
+  /* SIDEBAR (Left Side) */
+  .profile-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+    text-align: center;
+  }
+
+  .portrait {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--background);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+  }
+
+  .social-links-box {
+    background: var(--sidebar-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+
+  .social-links-box h2 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary-text);
+  }
+
+  .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .social-links li { margin-bottom: 0.75rem;}
+  .social-links a { display: block; overflow: hidden; text-overflow: ellipsis; }
+  .social-links strong { color: var(--secondary-text); }
+
+  /* MAIN CONTENT (Right Side) */
+  .main-content { flex: 1;}
+
+  h1 { font-size: 2.8rem; margin-top: 0; margin-bottom: 0.5rem; color: var(--primary-text); }
+  h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;}
+
+  .subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary-text);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .institution-block, .advisor-block {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--accent);
+  }
+
+  .institution-block { font-size: 1.1rem;}
+
+  .intro-paragraph {
+    color: var(--secondary-text);
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
+  }
+
+  .research-interests p {
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* BLOG SECTION */
+  .post-list { list-style: none; padding: 0; margin: 0; }
+  .post-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .post-item:last-child { border-bottom: none; }
+
+  .post-title { font-size: 1.3rem; font-weight: 600; color: var(--primary-text); display: block;}
+  .post-title:hover { text-decoration: underline; }
+  .post-description { margin-top: 0.25rem; color: var(--secondary-text); font-size: 0.95rem; }
+
+  .view-all { margin-top: 2rem;}
+
+  .styled-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--accent);
+    color: #ffffff !important;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  .styled-button:hover { background-color: var(--accent-hover); text-decoration: none; }
+</style>
